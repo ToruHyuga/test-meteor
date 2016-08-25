@@ -1,0 +1,4 @@
+node_modules/
+.meteor copy
+.meteor 2
+meteor.tar.gz

@@ -1,0 +1,52 @@
+<div class="card">
+    <header>
+        <div class="header">
+            <h4>{{$ctrl.organization.name}}</h4>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label>Code</label>
+                        {{$ctrl.organization.code}}
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Date</label>
+                        {{$ctrl.organization.date | date}}
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <a href="/campus/{{$ctrl.id}}/edit">
+                        <button type="button"  class="btn btn-sm btn-default">
+                            <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                            Edit
+                        </button></a>
+                    </div>
+                </div>
+            </div>
+            <h4>Devices</h4>
+        </div>
+    </header>
+    <table st-table="$ctrl.devices" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Identifier</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="device in $ctrl.devices" >
+            <td>{{device.identifier}}</td>
+            <td>{{device.dateEntered | date}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="1" st-displayed-pages="7"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,38 @@
+<div class="card">
+  <header>
+  <div class="header">
+   <h4>Campuses</h4>
+   </div>
+</header>
+<table st-table="$ctrl.organizations" class="table table-striped">
+		<thead>
+		<tr>
+        <th>Name</th>
+        <th>Devices count</th>
+        <th>Last referring date</th>
+        <th>First referring date</th>
+		</tr>
+		</thead>
+		<tbody>
+              <tr ng-repeat="organization in $ctrl.organizations" >
+                <td>{{organization.name}}</td>
+                <td>{{organization.count}}</td>
+                <td>{{organization.lastDate | date}}</td>
+                <td>{{organization.firstDate | date }}</td>
+                  <td><a href="/campus/{{organization.id._str}}">
+                      <button type="button"  class="btn btn-sm btn-default">
+                          <i class="fa fa-eye" aria-hidden="true"></i>
+                          View
+                      </button></a>
+                  </td>
+              </tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="1" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	</div>
